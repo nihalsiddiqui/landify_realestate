@@ -73,6 +73,7 @@ class listing_details_controller extends Controller
     public function store(Request $request)
     {
 
+
         $this->validate($request, [
             'name' => 'Required',
             'cnic' => 'Required',
@@ -96,7 +97,7 @@ class listing_details_controller extends Controller
 //            'list_four' => 'Required',
 //            'list_five' => 'Required',
             'category' => 'Required',
-            'others' => 'Required',
+//            'others' => 'Required',
             'nationality' => 'Required',
             'tehsil' => 'Required',
             'sub_category' => 'Required',
@@ -191,7 +192,7 @@ class listing_details_controller extends Controller
 //                'list_five' => 'Required',
                 'category' => 'Required',
                 'sub_category' => 'Required',
-                'others' => 'Required',
+//                'others' => 'Required',
                 'nationality' => 'Required',
                 'tehsil' => 'Required',
             ]);
