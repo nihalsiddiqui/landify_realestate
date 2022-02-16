@@ -47,7 +47,7 @@
 
                                                     <div class="col-sm-6 ">
                                                         <label class="col-form-label" for="first-name">CNIC</label>
-                                                        <input type="text" id="first-name" class="form-control"
+                                                        <input type="cnic" id="first-name" class="form-control"
                                                                name="cnic"  value="{{$listing->cnic}}" placeholder=" cnic" />
                                                         @error("cnic")
                                                         <span class="text-danger">{{ $message }}</span>
@@ -107,11 +107,11 @@
 {{--                                                        @enderror--}}
 {{--                                                    </div>--}}
                                                     <div class="col-sm-6 ">
-                                                        <label class="col-form-label" for="first-name">Category
+                                                        <label class="col-form-label" for="first-name">Category of Property
                                                             <span class="text-danger">*</span></label>
                                                         <select class="form-control "
                                                                 name="category" id="" >
-                                                            <option value="" selected disabled>Select Category</option>
+                                                            <option value="" selected disabled>Category of Property</option>
 
                                                             <option
                                                                 value="Commercial" {{ $listing->category === 'Commercial' ? 'selected' : '' }}>
@@ -120,6 +120,14 @@
                                                             <option
                                                                 value="Residential" {{ $listing->category === 'Residential' ? 'selected' : '' }}>
                                                                 Residential
+                                                            </option>
+                                                            <option
+                                                                value="Agriculture" {{ $listing->category === 'Agriculture' ? 'selected' : '' }}>
+                                                                Agriculture
+                                                            </option>
+                                                            <option
+                                                                value="Others" {{ $listing->category === 'Others' ? 'selected' : '' }}>
+                                                                Others
                                                             </option>
 {{--                                                            <option value="Commercial">Commercial</option>--}}
 {{--                                                            <option value="Residential">Residential</option>--}}
@@ -130,11 +138,11 @@
                                                         @enderror
                                                     </div>
                                                     <div class="col-sm-6 ">
-                                                        <label class="col-form-label" for="first-name">Sub-category
+                                                        <label class="col-form-label" for="first-name">Type of Property
                                                             <span class="text-danger">*</span></label>
                                                         <select class="form-control "
                                                                 name="sub_category" id="" >
-                                                            <option value="" selected disabled>Select Sub-category</option>
+                                                            <option value="" selected disabled>Type of Property</option>
                                                             <option
                                                                 value="Empty land" {{ $listing->sub_category === 'Empty land' ? 'selected' : '' }}>
                                                                 Empty land
@@ -142,6 +150,26 @@
                                                             <option
                                                                 value="Plot" {{ $listing->sub_category === 'Plot' ? 'selected' : '' }}>
                                                                 Plot
+                                                            </option>
+                                                            <option
+                                                                value="House" {{ $listing->sub_category === 'House' ? 'selected' : '' }}>
+                                                                House
+                                                            </option>
+                                                            <option
+                                                                value="Apartment" {{ $listing->sub_category === 'Apartment' ? 'selected' : '' }}>
+                                                                Apartment
+                                                            </option>
+                                                            <option
+                                                                value="Shop" {{ $listing->sub_category === 'Shop' ? 'selected' : '' }}>
+                                                                Shop
+                                                            </option>
+                                                            <option
+                                                                value="Plaza" {{ $listing->sub_category === 'Plaza' ? 'selected' : '' }}>
+                                                                Plaza
+                                                            </option>
+                                                            <option
+                                                                value="Society" {{ $listing->sub_category === 'Society' ? 'selected' : '' }}>
+                                                                Society
                                                             </option>
 {{--                                                            <option value="Empty land">Empty land</option>--}}
 {{--                                                            <option value="Plot">Plot</option>--}}
@@ -194,33 +222,16 @@
 
                                                 <div class="col-12">
                                                     <div class="form-group row">
-                                                        <div class="col-sm-6 ">
-                                                            <label class="col-form-label" for="first-name">Others<span class="text-danger">*</span></label>
-                                                            <input type="text" id="first-name" class="form-control"
-                                                                   name="others" value="{{$listing->others}}" placeholder="others " />
-                                                            @error("others")
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                            @enderror
-                                                        </div>
+{{--                                                        <div class="col-sm-6 ">--}}
+{{--                                                            <label class="col-form-label" for="first-name">Others<span class="text-danger">*</span></label>--}}
+{{--                                                            <input type="text" id="first-name" class="form-control"--}}
+{{--                                                                   name="others" value="{{$listing->others}}" placeholder="others " />--}}
+{{--                                                            @error("others")--}}
+{{--                                                            <span class="text-danger">{{ $message }}</span>--}}
+{{--                                                            @enderror--}}
+{{--                                                        </div>--}}
 
-                                                        <div class="col-sm-6">
-                                                            <label class="col-form-label" for="first-name">Nature of Query<span
-                                                                    class="text-danger">*</span></label>
-                                                            <select name="nature_of_query" class="form-control" id="nature_of_query">
-                                                                <option selected disabled value="">Select Nature of Query</option>
-                                                                <option
-                                                                    value="urgent" {{ ($listing->nature_of_query === 'urgent'? 'selected' : '')}}>
-                                                                    urgent
-                                                                </option>
-                                                                <option
-                                                                    value="regular" {{ ($listing->nature_of_query === 'regular'? 'selected' : '')}}>
-                                                                    regular
-                                                                </option>
-                                                            </select>
-                                                            @error("area_type")
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                            @enderror
-                                                        </div>
+
 {{--                                                        <div class="col-sm-6">--}}
 {{--                                                            <label class="col-form-label" for="first-name">Status<span class="text-danger">*</span></label>--}}
 {{--                                                            <select name="status" id="" class="form-control">--}}
@@ -236,7 +247,7 @@
 {{--                                                        </div>--}}
                                                         <div class="col-sm-6 ">
                                                             <label class="col-form-label" for="first-name">Cell Phone<span class="text-danger">*</span></label>
-                                                            <input type="number" id="first-name" class="form-control"
+                                                            <input type="tel" id="first-name" class="form-control"
                                                                    name="phone_no" value="{{$listing->phone_no}}" placeholder=" " />
                                                             @error("phone_no")
                                                             <span class="text-danger">{{ $message }}</span>
@@ -245,7 +256,7 @@
 
                                                         <div class="col-sm-6 ">
                                                             <label class="col-form-label" for="first-name">Telephone no<span class="text-danger">*</span></label>
-                                                            <input type="number" id="first-name" class="form-control"
+                                                            <input type="tel" id="first-name" class="form-control"
                                                                    name="telephone_no" value="{{$listing->telephone_no}}" placeholder=" " />
                                                             @error("telephone_no")
                                                             <span class="text-danger">{{ $message }}</span>
@@ -289,6 +300,24 @@
                                                             <input type="text" id="first-name" class="form-control"
                                                                    name="address" value="{{$listing->address}}" placeholder=" " />
                                                             @error("address")
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label class="col-form-label" for="first-name">Nature of Query<span
+                                                                    class="text-danger">*</span></label>
+                                                            <select name="nature_of_query" class="form-control" id="nature_of_query">
+                                                                <option selected disabled value="">Select Nature of Query</option>
+                                                                <option
+                                                                    value="urgent" {{ ($listing->nature_of_query === 'urgent'? 'selected' : '')}}>
+                                                                    urgent
+                                                                </option>
+                                                                <option
+                                                                    value="regular" {{ ($listing->nature_of_query === 'regular'? 'selected' : '')}}>
+                                                                    regular
+                                                                </option>
+                                                            </select>
+                                                            @error("area_type")
                                                             <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
@@ -479,61 +508,122 @@
                                                     </div>
                                                 </div>
                                         </div>
-                                                <div class="row mb-1">
-                                                    <label for="l2" class="col-sm-1 col-form-label">L1</label>
-                                                    <div class="col-sm-11">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input"  value="list_one" {{ ($listing->list_one === 'list_one' ? 'selected' : '')}} name="list_one" type="checkbox" id="list2">
-                                                            <label class="form-check-label" for="list2">
-                                                                I need financial property ownership details
-                                                            </label>
-                                                        </div>
+                                        <div class="col-sm-12 my-2">
+                                            <label class="col-form-label" for="first-name">I need following services for all the above mentioned property :
+                                                <span class="text-danger">*</span></label>
+                                            <div class="row mb-1">
+                                                <label for="l1" class="col-sm-1 col-form-label">L1</label>
+                                                <div class="col-sm-11">
+                                                    <div class="form-check col-form-label">
+                                                        <input class="form-check-input "  name="list_one" value="true"  {{$listing->list_one ? "checked" :""}} type="checkbox" id="list2">
+                                                        <label class="form-check-label " for="list2">
+                                                            Financial property ownership details
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-1">
-                                                    <label for="l2" class="col-sm-1 col-form-label">L2</label>
-                                                    <div class="col-sm-11">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" name="list_two" type="checkbox" id="list2">
-                                                            <label class="form-check-label" for="list2">
-                                                                I need financial valuation as well
-                                                            </label>
-                                                        </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="l2" class="col-sm-1 col-form-label">L2</label>
+                                                <div class="col-sm-11">
+                                                    <div class="form-check col-form-label">
+                                                        <input class="form-check-input" name="list_two" value="true"  {{$listing->list_two ? "checked" :""}} type="checkbox" id="list2">
+                                                        <label class="form-check-label" for="list2">
+                                                            Financial valuation as well
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-1">
-                                                    <label for="l2" class="col-sm-1 col-form-label">L3</label>
-                                                    <div class="col-sm-11">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" name="list_three" type="checkbox" id="list2">
-                                                            <label class="form-check-label" for="list2">
-                                                                I need financial investment report of the property
-                                                            </label>
-                                                        </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="l2" class="col-sm-1 col-form-label">L3</label>
+                                                <div class="col-sm-11">
+                                                    <div class="form-check col-form-label">
+                                                        <input class="form-check-input" name="list_three" value="true"  {{$listing->list_three ? "checked" :""}} type="checkbox" id="list2">
+                                                        <label class="form-check-label" for="list2">
+                                                            Financial investment report of the property
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-1">
-                                                    <label for="l2" class="col-sm-1 col-form-label">L4</label>
-                                                    <div class="col-sm-11">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" name="list_four" type="checkbox" id="list2">
-                                                            <label class="form-check-label" for="list2">
-                                                                I need construction & structure assessment
-                                                            </label>
-                                                        </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="l2" class="col-sm-1 col-form-label">L4</label>
+                                                <div class="col-sm-11">
+                                                    <div class="form-check col-form-label">
+                                                        <input class="form-check-input" name="list_four" value="true"  {{$listing->list_four ? "checked" :""}} type="checkbox" id="list2">
+                                                        <label class="form-check-label" for="list2">
+                                                            Construction & structure assessment
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-1">
-                                                    <label for="l2" class="col-sm-1 col-form-label">L5</label>
-                                                    <div class="col-sm-11">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input"  name="list_five" type="checkbox" id="list2">
-                                                            <label class="form-check-label" for="list2">
-                                                                I need services for large scale society project
-                                                            </label>
-                                                        </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="l2" class="col-sm-1 col-form-label">L5</label>
+                                                <div class="col-sm-11">
+                                                    <div class="form-check col-form-label">
+                                                        <input class="form-check-input"  name="list_five" value="true"  {{$listing->list_five ? "checked" :""}} type="checkbox" id="list2">
+                                                        <label class="form-check-label" for="list2">
+                                                            Services for large scale society project
+                                                        </label>
                                                     </div>
                                                 </div>
+                                            </div>
+
+
+                                        </div>
+{{--                                                <div class="row mb-1">--}}
+{{--                                                    <label for="l2" class="col-sm-1 col-form-label">L1</label>--}}
+{{--                                                    <div class="col-sm-11">--}}
+{{--                                                        <div class="form-check">--}}
+{{--                                                            <input class="form-check-input"  value="list_one" {{ ($listing->list_one === 'list_one' ? 'selected' : '')}} name="list_one" type="checkbox" id="list2">--}}
+{{--                                                            <label class="form-check-label" for="list2">--}}
+{{--                                                                I need financial property ownership details--}}
+{{--                                                            </label>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="row mb-1">--}}
+{{--                                                    <label for="l2" class="col-sm-1 col-form-label">L2</label>--}}
+{{--                                                    <div class="col-sm-11">--}}
+{{--                                                        <div class="form-check">--}}
+{{--                                                            <input class="form-check-input" name="list_two" type="checkbox" id="list2">--}}
+{{--                                                            <label class="form-check-label" for="list2">--}}
+{{--                                                                I need financial valuation as well--}}
+{{--                                                            </label>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="row mb-1">--}}
+{{--                                                    <label for="l2" class="col-sm-1 col-form-label">L3</label>--}}
+{{--                                                    <div class="col-sm-11">--}}
+{{--                                                        <div class="form-check">--}}
+{{--                                                            <input class="form-check-input" name="list_three" type="checkbox" id="list2">--}}
+{{--                                                            <label class="form-check-label" for="list2">--}}
+{{--                                                                I need financial investment report of the property--}}
+{{--                                                            </label>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="row mb-1">--}}
+{{--                                                    <label for="l2" class="col-sm-1 col-form-label">L4</label>--}}
+{{--                                                    <div class="col-sm-11">--}}
+{{--                                                        <div class="form-check">--}}
+{{--                                                            <input class="form-check-input" name="list_four" type="checkbox" id="list2">--}}
+{{--                                                            <label class="form-check-label" for="list2">--}}
+{{--                                                                I need construction & structure assessment--}}
+{{--                                                            </label>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="row mb-1">--}}
+{{--                                                    <label for="l2" class="col-sm-1 col-form-label">L5</label>--}}
+{{--                                                    <div class="col-sm-11">--}}
+{{--                                                        <div class="form-check">--}}
+{{--                                                            <input class="form-check-input"  name="list_five" type="checkbox" id="list2">--}}
+{{--                                                            <label class="form-check-label" for="list2">--}}
+{{--                                                                I need services for large scale society project--}}
+{{--                                                            </label>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
 
                                                 <div class="card">

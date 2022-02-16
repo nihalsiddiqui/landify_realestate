@@ -38,7 +38,7 @@
                                             </div>
                                             <div class="col-sm-6 ">
                                                 <label class="col-form-label" for="first-name">CNIC</label>
-                                                <input type="number" id="first-name" class="form-control"
+                                                <input type="cnic" id="first-name" class="form-control"
                                                        name="cnic" placeholder=" CNIC" value="{{ old('cnic') }}"/>
                                                 @error("cnic")
                                                 <span class="text-danger">{{ $message }}</span>
@@ -50,25 +50,26 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-sm-6 ">
-                                                <label class="col-form-label" for="first-name">Category
+                                                <label class="col-form-label" for="first-name">Category of Property
                                                     <span class="text-danger">*</span></label>
                                                 <select class="form-control "
                                                         name="category" id="">
-                                                    <option value="" selected disabled>Select Category</option>
+                                                    <option value="" selected disabled>Category of Property</option>
                                                     <option value="Commercial">Commercial</option>
                                                     <option value="Residential">Residential</option>
                                                     <option value="Agriculture">Agriculture</option>
+                                                    <option value="Others">Others</option>
                                                 </select>
                                                 @error("category_ids")
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="col-sm-6 ">
-                                                <label class="col-form-label" for="first-name">Sub-category
+                                                <label class="col-form-label" for="first-name">Type of Property
                                                     <span class="text-danger">*</span></label>
                                                 <select class="form-control "
                                                         name="sub_category" id="">
-                                                    <option value="" selected disabled>Select Sub-category</option>
+                                                    <option value="" selected disabled>Type of Property</option>
                                                     <option value="Empty land">Empty land</option>
                                                     <option value="Plot">Plot</option>
                                                     <option value="House">House</option>
@@ -130,27 +131,16 @@
 {{--                                            </div>--}}
 {{--                                            <div class="col-sm-6 ">--}}
 
-                                            <div class="col-sm-6 ">
-                                                <label class="col-form-label" for="first-name">Others
-                                                     <span class="text-danger">*</span></label>
-                                                <input type="text" id="first-name" class="form-control"
-                                                       name="others" placeholder="Others" value="{{ old('others') }}"/>
-                                                @error("others")
-                                                <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label" for="first-name">Nature of Query <span
-                                                        class="text-danger">*</span></label>
-                                                <select name="nature_of_query" class="form-control" id="area_type">
-                                                    <option selected disabled value="">Select Nature of Query</option>
-                                                    <option value="urgent">urgent</option>
-                                                    <option value="regular">regular</option>
-                                                </select>
-                                                @error("nature_of_query")
-                                                <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
+{{--                                            <div class="col-sm-6 ">--}}
+{{--                                                <label class="col-form-label" for="first-name">Others--}}
+{{--                                                     <span class="text-danger">*</span></label>--}}
+{{--                                                <input type="text" id="first-name" class="form-control"--}}
+{{--                                                       name="others" placeholder="Others" value="{{ old('others') }}"/>--}}
+{{--                                                @error("others")--}}
+{{--                                                <span class="text-danger">{{ $message }}</span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
+
 
                                         </div>
                                         </div>
@@ -170,7 +160,7 @@
                                             <div class="col-sm-6 ">
                                                 <label class="col-form-label" for="first-name">Cell Phone
                                                     <span class="text-danger">*</span></label>
-                                                <input type="number" id="first-name" class="form-control"
+                                                <input type="tel" id="first-name" class="form-control"
                                                        name="phone_no" placeholder="Cell Phone" value="{{ old('phone_no') }}"/>
                                                 @error("phone_no")
                                                 <span class="text-danger">{{ $message }}</span>
@@ -189,7 +179,7 @@
                                             <div class="col-sm-6 ">
                                                 <label class="col-form-label" for="first-name">Telephone No
                                                      <span class="text-danger">*</span></label>
-                                                <input type="number" id="first-name" class="form-control"
+                                                <input type="tel" id="first-name" class="form-control"
                                                        name="telephone_no" placeholder="Telephone No" value="{{ old('telephone_no') }}"/>
                                                 @error("telephone_no")
                                                 <span class="text-danger">{{ $message }}</span>
@@ -281,10 +271,10 @@
                                                 @enderror
                                             </div>
                                             <div class="col-sm-6 ">
-                                                <label class="col-form-label" for="first-name">Area of the Property
+                                                <label class="col-form-label" for="first-name">Area/Size of the Property
                                                      <span class="text-danger">*</span></label>
                                                 <input type="text" id="first-name" class="form-control"
-                                                       name="area_of_Property" placeholder="Area of the Property" value="{{ old('area_of_Property') }}"/>
+                                                       name="area_of_Property" placeholder="Area/Size of the Property" value="{{ old('area_of_Property') }}"/>
                                                 @error("area_of_Property")
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
@@ -322,6 +312,18 @@
                                                 <input type="text" id="first-name" class="form-control"
                                                        name="address" placeholder="Others" value="{{ old('address') }}"/>
                                                 @error("address")
+                                                <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label" for="first-name">Nature of Query <span
+                                                        class="text-danger">*</span></label>
+                                                <select name="nature_of_query" class="form-control" id="area_type">
+                                                    <option selected disabled value="">Select Nature of Query</option>
+                                                    <option value="urgent">urgent</option>
+                                                    <option value="regular">regular</option>
+                                                </select>
+                                                @error("nature_of_query")
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -570,6 +572,7 @@
 
 {{--                                        </div>--}}
 {{--                                    </div>--}}
+
                                 </div>
                             </div>
                         </div>
@@ -671,62 +674,68 @@
 
 
 
+                                <div class="col-sm-12 my-2">
+                                    <label class="col-form-label" for="first-name">I need following services for all the above mentioned property :
+                                        <span class="text-danger">*</span></label>
+                                    <div class="row mb-1">
+                                        <label for="l1" class="col-sm-1 col-form-label">L1</label>
+                                        <div class="col-sm-11">
+                                            <div class="form-check col-form-label">
+                                                <input class="form-check-input " name="list_one" value="list_one" type="checkbox" id="list2">
+                                                <label class="form-check-label " for="list2">
+                                                    Financial property ownership details
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label for="l2" class="col-sm-1 col-form-label">L2</label>
+                                        <div class="col-sm-11">
+                                            <div class="form-check col-form-label">
+                                                <input class="form-check-input" name="list_two" value="list_two" type="checkbox" id="list2">
+                                                <label class="form-check-label" for="list2">
+                                                    Financial valuation as well
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label for="l2" class="col-sm-1 col-form-label">L3</label>
+                                        <div class="col-sm-11">
+                                            <div class="form-check col-form-label">
+                                                <input class="form-check-input" name="list_three" value="list_three" type="checkbox" id="list2">
+                                                <label class="form-check-label" for="list2">
+                                                    Financial investment report of the property
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label for="l2" class="col-sm-1 col-form-label">L4</label>
+                                        <div class="col-sm-11">
+                                            <div class="form-check col-form-label">
+                                                <input class="form-check-input" name="list_four" value="list_four" type="checkbox" id="list2">
+                                                <label class="form-check-label" for="list2">
+                                                    Construction & structure assessment
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label for="l2" class="col-sm-1 col-form-label">L5</label>
+                                        <div class="col-sm-11">
+                                            <div class="form-check col-form-label">
+                                                <input class="form-check-input"  name="list_five" value="list_five" type="checkbox" id="list2">
+                                                <label class="form-check-label" for="list2">
+                                                    Services for large scale society project
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="row mb-1">
-                                    <label for="l2" class="col-sm-1 col-form-label">L1</label>
-                                    <div class="col-sm-11">
-                                        <div class="form-check">
-                                            <input class="form-check-input"  name="list_one" type="checkbox" id="list2">
-                                            <label class="form-check-label" for="list2">
-                                                I need financial property ownership details
-                                            </label>
-                                        </div>
-                                    </div>
+
                                 </div>
-                                <div class="row mb-1">
-                                    <label for="l2" class="col-sm-1 col-form-label">L2</label>
-                                    <div class="col-sm-11">
-                                        <div class="form-check">
-                                            <input class="form-check-input" name="list_two" type="checkbox" id="list2">
-                                            <label class="form-check-label" for="list2">
-                                                I need financial valuation as well
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label for="l2" class="col-sm-1 col-form-label">L3</label>
-                                    <div class="col-sm-11">
-                                        <div class="form-check">
-                                            <input class="form-check-input" name="list_three" type="checkbox" id="list2">
-                                            <label class="form-check-label" for="list2">
-                                                I need financial investment report of the property
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label for="l2" class="col-sm-1 col-form-label">L4</label>
-                                    <div class="col-sm-11">
-                                        <div class="form-check">
-                                            <input class="form-check-input" name="list_four" type="checkbox" id="list2">
-                                            <label class="form-check-label" for="list2">
-                                                I need construction & structure assessment
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label for="l2" class="col-sm-1 col-form-label">L5</label>
-                                    <div class="col-sm-11">
-                                        <div class="form-check">
-                                            <input class="form-check-input"  name="list_five" type="checkbox" id="list2">
-                                            <label class="form-check-label" for="list2">
-                                                I need services for large scale society project
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+
 
 
 {{--                        <div class="card">--}}
