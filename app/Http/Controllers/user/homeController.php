@@ -79,7 +79,8 @@ class homeController extends Controller
 //        $agents = admin::role('agent')->latest()->limit(3)->get();
 //        npls.home
 //        , compact('posts', 'featuredListings', 'hotOfferListings', 'openHouseListings', 'foreClosureListings', 'properties', 'categories', 'listings', 'upcommingListings', 'lahoreListings', 'karachiListings', 'islamabadListings', 'agents')
-        return view('auth.login');
+//        return view('auth.login');
+        return view('landify.home');
     }
 
     //    public function searchResult(){
