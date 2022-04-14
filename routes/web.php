@@ -27,12 +27,13 @@ use App\Http\Controllers\StateController;
 use App\Http\Controllers\TownController;
 use App\Http\Controllers\user\aboutController;
 use App\Http\Controllers\user\contactController;
-use App\Http\Controllers\user\homeController;
+//use App\Http\Controllers\user\homeController;
+use App\Http\Controllers\landify\HomeController;
 use App\Http\Controllers\user\PageController;
 use App\Http\Controllers\user\postController as FrontendPostController;
 use App\Http\Controllers\admin\postController;
 use App\Http\Controllers\admin\ProfileController;
-use App\Http\Controllers\HomeController as ControllersHomeController;
+//use App\Http\Controllers\HomeController as ControllersHomeController;
 use App\Http\Controllers\user\DashboardController as UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +60,22 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'user'], function () {
     //Route Of mian web page using homeController
     Route::get('/', [homeController::class, 'index'])->name('frontend.home');
+    Route::get('/services', [homeController::class, 'services'])->name('frontend.services');
+    Route::get('/panel/experts', [homeController::class, 'experts'])->name('frontend.experts');
+    Route::get('/FAQs', [homeController::class, 'FAQs'])->name('frontend.faqs');
+    Route::get('/about', [homeController::class, 'About_us'])->name('frontend.about.us');
+
+//    Route::get('/contact', [homeController::class, 'contact'])->name('contact.us');
+
+
+
+
+
+
+
+
+
+//    npls theme
     Route::get('/properties', [homeController::class, 'properties'])->name('properties');
 //    Route::post('/Add/Listing', [ListingController::class, 'create'])->name('add.listing');
     Route::get('/properties/sale', [homeController::class, 'properties_sale'])->name('properties.for.sale');
@@ -76,7 +93,7 @@ Route::group(['namespace' => 'user'], function () {
     Route::get('/aboutUs', [PageController::class, 'aboutUS'])->name('about.us');
     Route::get('/agents', [PageController::class, 'agent'])->name('agent');
     Route::get('/agent/detail/{id}', [PageController::class, 'agentDetail'])->name('agent.detail');
-    Route::get('/agent/contact', [PageController::class, 'agentContact'])->name('agent.contact');
+//    Route::get('/agent/contact', [PageController::class, 'agentContact'])->name('agent.contact');
     Route::get('/apply/agent', [PageController::class, 'agentApply'])->name('applynow');
     Route::get('/blogs', [PageController::class, 'blog'])->name('blog');
     Route::get('/why/npls', [PageController::class, 'why_npls'])->name('why_npls');
@@ -87,7 +104,7 @@ Route::group(['namespace' => 'user'], function () {
 //    Route::get('/email/notification', [App\Http\Controllers\user\PageController::class, 'email_page']);
 
 
-    Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+//    Route::get('/contact', [PageController::class, 'contact'])->name('contact');
     Route::get('/privacy/policy', [homeController::class, 'privacy'])->name('privacy.policy');
     Route::get('/find/property', [PageController::class, 'findProperty'])->name('find.property');
     Route::get('listing/search', function () {
