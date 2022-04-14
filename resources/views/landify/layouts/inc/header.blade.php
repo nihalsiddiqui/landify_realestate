@@ -73,13 +73,13 @@
                         <nav>
                             <ul>
                                 <li class="{{ Route::currentRouteName() == "frontend.home"?"active":"" }}"><a href="{{ route("frontend.home") }}">Home</a></li>
-                                <li  class=""><a href="#">Verification services</a></li>
+                                <li  class="{{ Route::currentRouteName() == "frontend.services"?"active":"" }}"><a href="{{route('frontend.services')}}">Verification services</a></li>
                                 {{--                                {{ ((Route::currentRouteName() == "properties") or str_contains(Route::currentRouteName(),"properties."))?"active":"" }}--}}
                                 {{--                                {{ route("properties", ['type' => 'grid']) }}--}}
 
-                                <li class=""><a href="#">Panel Of Experts</a></li>
+                                <li class="{{ Route::currentRouteName() == "frontend.experts"?"active":"" }}"><a href="{{route('frontend.experts')}}">Panel Of Experts</a></li>
 
-                                <li class=""><a href="#">
+                                <li class="{{ Route::currentRouteName() == "frontend.faqs"?"active":"" }}"><a href="{{route('frontend.faqs')}}">
                                         FAQs
                                     </a>
                                     {{--                                    <ul class="sub-menu">--}}
@@ -87,13 +87,12 @@
                                     {{--                                        <li ><a href="{{ route("properties.for.rent") }}">Propertiest for Rent <i class="{{ Route::currentRouteName() == "properties.rent"?"fa fa-check":"" }}"></i></a></li>--}}
                                     {{--                                    </ul>--}}
                                 </li>
-                                <li class=""><a href="#"> About US
-
+                                <li class="{{ Route::currentRouteName() == "frontend.about.us"?"active":"" }}"><a href="{{route('frontend.about.us')}}"> About US
                                     </a>
-                                <li class=""><a href="#">Contact US</a>
-
                                 </li>
-
+{{--                                <li class="{{ Route::currentRouteName() == "contact.us"?"active":"" }}"><a href="{{route('contact.us')}}"> contact US--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                             </ul>
                         </nav>
                     </div>
@@ -112,21 +111,29 @@
                         <nav id="dropdown">
                             <ul>
                                 <li class="{{ Route::currentRouteName() == "frontend.home"?"active":"" }}"><a href="{{ route("frontend.home") }}">Home</a></li>
-                                <li  class="{{ Route::currentRouteName() == "about.us"?"active":"" }}"><a href="{{route('about.us')}}">Verification Services</a></li>
+                                <li  class="{{ Route::currentRouteName() == "frontend.services"?"active":"" }}"><a href="{{route('frontend.services')}}">Verification services</a></li>
                                 {{--                                {{ ((Route::currentRouteName() == "properties") or str_contains(Route::currentRouteName(),"properties."))?"active":"" }}--}}
-                                <li class=""><a href="{{route('login')}}">Panel Of Experts
+                                {{--                                {{ route("properties", ['type' => 'grid']) }}--}}
+
+                                <li class="{{ Route::currentRouteName() == "frontend.experts"?"active":"" }}"><a href="{{route('frontend.experts')}}">Panel Of Experts</a></li>
+
+                                <li class="{{ Route::currentRouteName() == "frontend.faqs"?"active":"" }}"><a href="{{route('frontend.faqs')}}">
+                                        FAQs
+                                    </a>
+                                    {{--                                    <ul class="sub-menu">--}}
+                                    {{--                                        <li ><a href="{{ route("properties.for.sale") }}">Properties for Sale <i class="{{ Route::currentRouteName() == "properties.sale"?"fa fa-check":"" }}"></i></a></li>--}}
+                                    {{--                                        <li ><a href="{{ route("properties.for.rent") }}">Propertiest for Rent <i class="{{ Route::currentRouteName() == "properties.rent"?"fa fa-check":"" }}"></i></a></li>--}}
+                                    {{--                                    </ul>--}}
+                                </li>
+                                <li class="{{ Route::currentRouteName() == "frontend.about.us"?"active":"" }}"><a href="{{route('frontend.about.us')}}"> About US
 
                                     </a>
                                 </li>
-                                <li class=""><a href="{{route('agent')}}">FAQs</a>
+{{--                                <li class="{{ Route::currentRouteName() == "contact.us"?"active":"" }}"><a href="{{route('contact.us')}}"> contact US--}}
 
-                                </li>
+{{--                                    </a>--}}
+{{--                                </li>--}}
 
-                                <li class="{{ Route::currentRouteName() == "blog"?"active":"" }}?"><a href="{{route('why_npls')}}">About Us </a>
-\
-                                </li>
-                                <li class="{{ Request::routeIs("post.create")?"active":"" }}"><a href="{{route('contact')}}">Contact Us</a></li>
-                                <li>
                             </ul>
 
                         </nav>
