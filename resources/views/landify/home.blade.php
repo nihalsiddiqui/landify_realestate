@@ -75,7 +75,7 @@ Valuation & Evaluation">Structure & building
                 <div class="col-md-2 text-center">
                     <button type="submit" class="btn btn-lg" style="color: #fff; background: #008000;border-radius: 20px"> Submit</button>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-md-2 text-center" style="margin-top: 9px"  >
                     <a href="#" style="color: #008000 ;text-underline: green!important" >Advance Search</a>
                 </div>
                 <div class="col-md-2 text-center">
