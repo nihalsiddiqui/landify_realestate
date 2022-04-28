@@ -464,7 +464,7 @@ header .main-header-area .main-menu ul li a {
   text-transform: capitalize;
   padding: 25px 12px;
   text-decoration: none;
-  color: #333333;
+  color: #fff;
   transition: all 0.5s ease 0s;
   font-weight: 600;
 }
@@ -1928,13 +1928,13 @@ header .modal .modal-dialog .modal-content .modal-footer a {
 17.Page Header Section breadcumb Start Here
 -----------------------------*/
 .page-header-area {
-  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5)), url("images/npls_banner.jpg") no-repeat scroll center center / cover;
-  text-align: left;
-  padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5)), url("/landify/images/npls_banner.jpg") no-repeat scroll center center / cover;
+    text-align: left;
+    padding: 100px 0;
 }
 .page-header-area h1 {
   font-size: 30px;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -1970,13 +1970,13 @@ header .modal .modal-dialog .modal-content .modal-footer a {
   font-family: FontAwesome;
 }
 .page-header-area ul li:last-child {
-  color: #46BFE2;
+  color: #000;
   margin-left: 15px;
 }
 .page-header-area ul li a {
   display: block;
   text-decoration: none;
-  color: #ffffff;
+  color: #000;
 }
 /* --------------------------
 18.About Us Area Start Here
