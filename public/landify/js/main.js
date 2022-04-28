@@ -5,7 +5,7 @@
      jQuery MeanMenu activation code
      ***************************************/
     $('nav#dropdown').meanmenu({
-        siteLogo: "<a href='/'><img src='/npls/images/logo1.png' /></a>"
+        siteLogo: "<a href='/'><img src='/landify/images/landif-1.jpg' /></a>"
     });
 
     /*----------------------------
